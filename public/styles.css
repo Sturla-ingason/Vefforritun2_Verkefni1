@@ -1,1 +1,12 @@
 /* útfæra */
+
+/* container fyrir grid */
+.maingrid{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.headertwo{
+    grid-column: span 3 / 5;
+    align-items: center;
+}
