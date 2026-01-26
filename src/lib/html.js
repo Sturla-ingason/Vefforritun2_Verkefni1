@@ -1,4 +1,5 @@
 
+//generates the index html file for the project
 export function generateIndexHTML(){
   const html = /*HTML*/ `
   <html>
@@ -8,7 +9,26 @@ export function generateIndexHTML(){
 
     <body>
       <h1>Velkomin í spurningaleik</h1>
-      <a href="./saga.html">Sögur Spurningar</a>
+      <ul>
+        <li>
+          <a href="./almenKunnata.html">Almenn Kunnátta</a>
+        </li>
+        <li>
+          <a href="./natturaOgVisindi.html">Náttúra og Vísindi</a>
+        </li>
+        <li>
+          <a href="./bokmentirOgListir.html">Bókmentir og Listir</a>
+        </li>
+        <li>
+          <a href="./saga.html">Saga</a>
+        </li>
+        <li>
+          <a href="./landafradi.html">Landafræði</a>
+        </li>
+        <li>
+          <a href="./skemmtunOgAfreiding.html">Skemmtun og Afþreyfing</a>
+        </li>
+      </ul>
     </body>
   </html>
 
@@ -17,6 +37,7 @@ export function generateIndexHTML(){
 }
 
 
+//used to generate html for question q
 export function generateQuestionHtml(q){
 
   const html= /*HTML*/ `
@@ -32,7 +53,7 @@ export function generateQuestionHtml(q){
 
 }
 
-
+//used to generate the saga.htlm file and all the questions for that catagory
 export function generateQuestionHTMLSaga(title, questionsHTML){
   const html = /*HTML*/ `
   <html>

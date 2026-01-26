@@ -69,21 +69,35 @@ async function main() {
 
   const htmlQuestions = questionMaking(questions)
 
-  //generateQuestionsHTMlSaga()
+
+  //Búa til Allar html skrár.
+  const pathAlmennaKunnata = './dist/almenKunnata.html'
+  await fs.writeFile(pathAlmennaKunnata, htmlQuestions[1], 'utf-8')
+
+  const pathNatturaOgVisindi = './dist/natturaOgVisindi.html'
+  await fs.writeFile(pathNatturaOgVisindi, htmlQuestions[2], 'utf-8');
+
+  const pathBokmentirOgListir = './dist/bokmentirOgListir.html'
+  await fs.writeFile(pathBokmentirOgListir, htmlQuestions[3], 'utf-8')
+
   const pathSagaQuestions = './dist/saga.html'
-  await fs.writeFile(pathSagaQuestions, htmlQuestions[1], 'utf-8')
+  await fs.writeFile(pathSagaQuestions, htmlQuestions[4], 'utf-8')
 
+  const pathLandafradi = './dist/landafradi.html'
+  await fs.writeFile(pathLandafradi, htmlQuestions[5], 'utf-8')
 
-  //TODO búa til html skrá fyrir alla hina flokkana okkar.
+  const pathSkemmtunOgAfreiding = './dist/skemmtunOgAfreiding.html'
+  await fs.writeFile(pathSkemmtunOgAfreiding, htmlQuestions[6], 'utf-8')
+
+  //const pathIthrotirOgTomstundir = './dist/ithrotirOgTomstundir.html'
+  //await fs.writeFile(pathIthrotirOgTomstundir, htmlQuestions[7], 'utf-8')
+
 
 
   //TODO búa til index file
   const indexoutput = generateIndexHTML();
   const pathIndex = './dist/index.html';
   await fs.writeFile(pathIndex, indexoutput, 'utf-8');
-
-
-
 
 }
 
