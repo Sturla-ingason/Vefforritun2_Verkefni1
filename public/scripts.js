@@ -14,14 +14,20 @@ function questionAnswerListener(e){
     const isIncorrect = button.classList.contains('button-incorrect');
 
     const parentQuestion = button.closest('.question');
+    
+    //find the hidden element in the parent question
+    const answerElement = parentQuestion?.querySelector('.hidden');
+    
+    // Remove the hidden class to reveal the answer
+    if(answerElement){
+        answerElement.classList.remove('hidden');
+    }
 
-    console.log(parentQuestion)
 
     //Erorr handeling
     if(!correctElement){
         throw new Error("missing current element")
     }
-
     //updating the correct counter.
     if(isCorrect){
         const currentCorrectText = correctElement.textContent;
@@ -33,10 +39,10 @@ function questionAnswerListener(e){
         correctElement.textContent = updatedCorrect.toString();
     }
 
+
     if(!incorrectElement){
         throw new Error("missing current element")
     }
-
     if(isIncorrect){
         const currentCorrectText = incorrectElement.textContent;
 
@@ -45,6 +51,15 @@ function questionAnswerListener(e){
         const updatedIncorrect = currentIncorrect + 1;
 
         incorrectElement.textContent = updatedIncorrect.toString()
+
+    }
+
+    //to disable all the buttons of the questions after one has been pushed
+    if(parentQuestion){
+        const questionButtons = parentQuestion.querySelectorAll('button');
+        for(const btn of questionButtons){
+            btn.disabled = true;
+        }
     }
 
 };

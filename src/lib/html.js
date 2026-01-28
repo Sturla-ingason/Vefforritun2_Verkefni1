@@ -41,11 +41,13 @@ export function generateIndexHTML(){
 export function generateQuestionHtml(q){
 
   const html= /*HTML*/ `
-    <section class="question" data-answerd="false" >
+    <section class="question flexing" data-answerd="false" >
       <h3>${q.questoin}</h3>
-      <h3>${q.answer}</h3>
-      <button type="button" class="button button-correct"> rétt </button>
-      <button type="button" class="button button-incorrect"> rangt </button>
+      <h3 class="hidden answer">${q.answer}</h3>
+      <div class="counter">
+        <button type="button" class="button button-correct"> rétt </button>
+        <button type="button" class="button button-incorrect"> rangt </button>
+      </div>
     </section>
   `;
 
@@ -62,18 +64,17 @@ export function generateQuestionHTMLSaga(title, questionsHTML){
       <link rel="stylesheet" href="./public/styles.css">
     </head>
 
-    <body>
-      <a href="./index.html">til baka</a>
-      <div class="maingrid">
-        <h1 class="headertwo">spruningar leikur</h1>
+    <body class="maingrid">
+      <a href="./index.html" class="headertwo">til baka</a>
+      <div class="headertwo flexing">
+        <h2 class="title">${title}</h2>
         <div class="counter headertwo">
           <div class="correct">0</div>
           <div class="incorrect">0</div>
         </div>
       </div>
 
-      <div class="questions">
-        <h2>${title}</h2>
+      <div class="headertwo">
         ${questionsHTML}
       </div>
 

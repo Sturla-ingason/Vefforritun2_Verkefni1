@@ -3,10 +3,60 @@
 /* container fyrir grid */
 .maingrid{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .headertwo{
     grid-column: span 3 / 5;
-    align-items: center;
+}
+
+.flexing{
+    display: flex;
+    flex-direction: column;
+}
+
+.question{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 7px;
+    background-color: lightgrey;
+}
+
+.answer{
+    color: red;
+}
+
+.hidden{
+    display: none;
+}
+
+.title{
+    text-align: center;
+}
+
+.counter{
+    display: inline-flex;
+    justify-content: center;
+}
+
+.correct{
+    padding: 20px;
+}
+
+.incorrect{
+    padding: 20px;
+}
+
+.button{
+    width: 50%;
+    margin: 5px;
+    padding: 5px;
+}
+
+.button-correct{
+    background-color: green;
+}
+
+.button-incorrect{
+    background-color: red;
 }
