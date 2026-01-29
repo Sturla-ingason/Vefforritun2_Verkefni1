@@ -4,7 +4,7 @@ export function generateIndexHTML(){
   const html = /*HTML*/ `
   <html>
     <head>
-      <link rel="stylesheet" href="./public/indexstyles.css">
+      <link rel="stylesheet" href="/public/indexstyles.css">
     </head>
 
     <body>
@@ -52,7 +52,7 @@ export function generateQuestionHTMLSaga(title, questionsHTML){
   <html>
     <head>
       <script src="scripts.js" type="module"></script>
-      <link rel="stylesheet" href="./public/styles.css">
+      <link rel="stylesheet" href="/public/styles.css">
     </head>
 
     <body class="maingrid">
