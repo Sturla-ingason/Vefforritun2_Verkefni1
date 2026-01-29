@@ -60,3 +60,9 @@
 .button-incorrect{
     background-color: red;
 }
+
+.answerButtonStyle{
+    margin: 5px;
+    border-radius: 5px;
+    background-color: white;
+}

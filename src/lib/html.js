@@ -33,7 +33,7 @@ export function generateQuestionHtml(q){
   const html= /*HTML*/ `
     <section class="question flexing" data-answerd="false" >
       <h3>${q.questoin}</h3>
-      <button type="button" class="button answerButton">test</button>
+      <button type="button" class="answerButton answerButtonStyle">Sýna svar</button>
       <h3 class="hidden answer">${q.answer}</h3>
       <div class="counter">
         <button type="button" class="button button-correct"> rétt </button>
