@@ -54,6 +54,9 @@ function questionAnswerListener(e){
 
     }
 
+
+    
+
     //to disable all the buttons of the questions after one has been pushed
     if(parentQuestion){
         const questionButtons = parentQuestion.querySelectorAll('button');
@@ -64,8 +67,40 @@ function questionAnswerListener(e){
 
 };
 
-const buttons = document.querySelectorAll('button');
+
+const buttons = document.querySelectorAll('.button-correct, .button-incorrect');
 
 for(const button of buttons){
     button.addEventListener('click', questionAnswerListener)
+}
+
+
+function answerButton(e){
+
+    const button = e.target;
+
+    const parentQuestion = button.closest('.question');
+    
+    //find the hidden element in the parent question
+    const answerElement = parentQuestion?.querySelector('.hidden');
+    
+    // Remove the hidden class to reveal the answer
+    if(answerElement){
+        answerElement.classList.remove('hidden');
+    }
+
+
+    if(!button.classList.contains("answerButton")){
+        return
+    }
+
+    console.log("hallo svar")
+
+}
+
+
+const answerbuttons = document.querySelectorAll('.answerButton');
+
+for(const button of answerbuttons){
+    button.addEventListener('click', answerButton);
 }
